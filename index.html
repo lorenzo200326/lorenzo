@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Aquí</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+            background-size: 300% 300%;
+            animation: gradientAnimation 6s ease infinite;
+            color: black; /* Cambié el color del texto a negro */
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #message {
+            text-align: center;
+            display: none;
+        }
+
+        #message img {
+            width: 200px;
+            height: auto;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        #clickButton {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        #clickButton:hover {
+            background-color: #ff3e33;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="clickArea">
+        <button id="clickButton">Si te sientes mal haz click aquí</button>
+    </div>
+    <div id="message">
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Gato animado">
+        <h1>Eres hermosa ❤️</h1>
+        <p>Hola Marta,
+
+Recuerda que eres Capricornio, y eso significa que llevas en ti una fortaleza natural y una capacidad única para enfrentar cualquier desafío. Hoy es un gran día, una nueva oportunidad para crecer, disfrutar y demostrar todo lo que eres capaz de lograr. No dejes que nada te detenga; mereces todo lo bueno que está por venir. ¡Aprovecha cada momento, este día es tuyo! ✨🌟.</p>
+    </div>
+
+    <script>
+        const button = document.getElementById("clickButton");
+        const message = document.getElementById("message");
+        const clickArea = document.getElementById("clickArea");
+
+        button.addEventListener("click", () => {
+            clickArea.style.display = "none";
+            message.style.display = "block";
+        });
+    </script>
+</body>
+</html>
